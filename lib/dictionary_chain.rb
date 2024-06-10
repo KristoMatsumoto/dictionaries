@@ -73,18 +73,19 @@ class DictionaryChain
     end
 
     # Searching for an element: returns TRUE if successful; if the element is not found, returns FALSE
-    def find( _element_ )
-        @@operations = 0
-        @arr[h(_element_)].each do | elem |
-            @@operations += 1
-            if (elem == _element_)
-                return true
-            end
-        end
-        return false
-    end
+    
+    # def find( _element_ )
+    #     @@operations = 0
+    #     @arr[h(_element_)].each do | elem |
+    #         @@operations += 1
+    #         if (elem == _element_)
+    #             return true
+    #         end
+    #     end
+    #     return false
+    # end
 
-    def find_from_key( _key_ )
+    def find( _key_ )
         @arr[_key_.hash % @arr.length].each do | elem |
             @@operations += 1
             if (key(elem) == _key_)
